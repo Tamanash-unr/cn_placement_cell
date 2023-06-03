@@ -1,0 +1,45 @@
+#main-body {
+  min-height: 60vh; }
+  #main-body .batch-form {
+    margin-top: 50px;
+    margin-bottom: 25px; }
+    #main-body .batch-form .form-group {
+      margin-left: 25px; }
+      #main-body .batch-form .form-group input {
+        border-radius: 15px;
+        padding: 5px; }
+      #main-body .batch-form .form-group button {
+        border-radius: 15px;
+        font-size: 15px;
+        padding: 10px;
+        background-color: white;
+        border: 1px solid green; }
+      #main-body .batch-form .form-group button:hover {
+        background-color: green;
+        color: white;
+        cursor: pointer; }
+  #main-body #batch-list {
+    width: fit-content; }
+    #main-body #batch-list li {
+      display: flex;
+      border: 1px solid black; }
+      #main-body #batch-list li div {
+        width: 250px;
+        height: 80px; }
+      #main-body #batch-list li .batch-delete a {
+        border: 1px solid #c52929;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #c52929; }
+      #main-body #batch-list li .batch-delete a:hover {
+        background-color: #c52929;
+        color: white; }
+    #main-body #batch-list #batch-list-item:hover {
+      background-color: #5ebb7a;
+      color: white; }
+    #main-body #batch-list :first-child {
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px; }
+    #main-body #batch-list :last-child {
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px; }

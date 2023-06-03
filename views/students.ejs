@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="/css/students.css">
+
+<div class="flex-center">
+    <form class="student-form" action="/utils/create-student" method="POST">
+        <h2>Add New Student</h2>
+        <div class="form-detail">
+            <div>
+                <div class="form-group">
+                    <label for="student_name">Student Name</label>
+                    <input type="text" class="form-control" id="student_name" name="student_name" placeholder="Student Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student_college">College Name</label>
+                    <input type="text" class="form-control" id="student_college" name="student_college" placeholder="College Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="batch_name">Batch Name</label>
+                    <select class="form-control" id="batch_name" name="batch_name">
+                        <option value="none">None</option>
+                        <% for(var batch of batchList){ %>
+                            <option value="<%= batch.batchName %>"><%= batch.batchName %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="dsa_score">DSA Final Score</label>
+                    <input type="number" class="form-control" id="dsa_score" name="dsa_score" placeholder="0 %" required>
+                </div>
+                <div class="form-group">
+                    <label for="webd_score">Web D. Final Score</label>
+                    <input type="number" class="form-control" id="webd_score" name="webd_score" placeholder="0 %" required>
+                </div>
+                <div class="form-group">
+                    <label for="react_score">React Final Score</label>
+                    <input type="number" class="form-control" id="react_score" name="react_score" placeholder="0 %" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit">Add Student</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="flex-center" id="student-list-container">
+    <ul id="student-list">
+        <li id="student-list-heading">
+            <div class="flex-center student-name">
+                <h3>Student Name</h3>
+            </div>
+            <div class="flex-center student-college">
+                <h3>College</h3>
+            </div>
+            <div class="flex-center student-batch">
+                <h3>Batch</h3>
+            </div>
+            <div class="flex-center student-status">
+                <h3>Status</h3>
+            </div>
+            <div class="flex-center student-scores">
+                <h3>Scores</h3>
+            </div>
+            <div>
+                <a href="#"></a>
+            </div>
+        </li>
+        <% for(var student of studentData){ %>
+            <li id="student-list-item">
+                <div class="flex-center student-name">
+                    <%= student.student.name %>
+                </div>
+                <div class="flex-center student-college">
+                    <%= student.student.college %>
+                </div>
+                <div class="flex-center student-batch">
+                    <%= student.student.batch %>
+                </div>
+                <div class="flex-center student-status">
+                    <%= student.student.status %>
+                </div>
+                <div class="flex-center student-status">
+                    <ul class="score-list">
+                        <li>DSA :: <%= student.DSA %>%</li>
+                        <li>Web D :: <%= student.Web_Development %>%</li>
+                        <li>React :: <%= student.React %>%</li>
+                    </ul>
+                </div>
+                <div class="flex-center student-delete">
+                    <a href="/utils/delete-student/<%= student._id %>/<%= student.student._id %>">
+                        <i class="fas fa-trash-alt"></i>
+                        Delete
+                    </a>
+                </div>
+            </li>
+        <% } %> 
+    </ul>
+</div>

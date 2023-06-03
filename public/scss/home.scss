@@ -1,0 +1,66 @@
+#main-body{
+    min-height: 62vh;
+}
+
+#dashboard-utils{
+    display: flex;
+    margin: auto;
+    width:50%;
+    justify-content: space-around;
+
+    .dashboard-btn{
+        border: 1px solid black;
+        border-radius: 15px;
+
+        a{
+            display: flex;
+            width: 250px;
+            text-align: center;
+            height: 150px;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+    }
+
+    .dashboard-btn:hover{
+        background-color: orange;
+        border: 1px solid orange;
+
+        a{
+            color: white;
+        }
+    }
+}
+
+.download-all{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin:auto;
+    margin-top: 30px;
+    width: 30%;
+    height: 80px;
+
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.download-all:hover{
+    border: 1px solid green;
+    background-color: green;
+
+    a{
+        color: white;
+    }
+}

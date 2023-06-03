@@ -1,0 +1,18 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;    
+
+    #main-body{
+        margin: 15px;
+    }
+
+    .flex-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

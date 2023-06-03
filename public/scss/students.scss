@@ -1,0 +1,114 @@
+#main-body{
+    min-height: 60vh;
+
+    .student-form{
+        margin-top: 50px;
+        margin-bottom: 25px;
+        border: 1px solid black;
+        border-radius: 15px;
+        width: fit-content;
+        padding: 20px;
+
+        .form-detail{
+            display: flex;
+
+            .form-group{
+                margin-bottom: 15px;
+                margin-right: 25px;
+        
+                input{
+                    border-radius: 15px;
+                    padding: 5px;
+                    margin-left: 5px;
+                }
+
+                select{
+                    background-color: white;
+                    border-radius: 15px;
+                    padding: 5px;
+                    margin-left: 5px;
+                    width: 280px;
+                }
+    
+                /* Hide Arrows in Number field - Chrome, Safari, Edge, Opera */
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                }
+    
+                /* Hide Arrows in Number field - Firefox */
+                input[type=number] {
+                -moz-appearance: textfield;
+                }
+            }
+        }
+    
+        button{
+            border-radius: 15px;
+            font-size: 15px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid green;
+        }
+
+        button:hover{
+            background-color: green;
+            color: white;
+            cursor: pointer;
+        }      
+    }
+    
+    #student-list{
+        width:fit-content;
+    
+        li{
+            display: flex;
+            border:1px solid black;
+
+            .score-list{
+                padding: 5px;
+
+                li{
+                    min-width: 120px;
+                    padding: 10px;
+                }
+            }
+    
+            div{
+                width: 250px;
+                min-height: 80px;
+            }
+
+            .student-delete{
+                a{
+                    border: 1px solid rgb(197, 41, 41);
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    color: rgb(197, 41, 41);
+                }
+
+                a:hover{
+                    background-color: rgb(197, 41, 41);
+                    color: white;
+                }
+            }
+        }
+    
+        #student-list-item:hover{
+            background-color: rgb(94, 187, 122);
+            color: white;
+        }
+    
+        :first-child{
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+    
+        :last-child{
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+    }
+}
+

@@ -1,0 +1,44 @@
+body {
+  background-image: url("/images/background-tech.jpg");
+  background-size: cover;
+  background-blend-mode: lighten; }
+  body .auth-container {
+    background-color: white;
+    width: 25%;
+    height: fit-content;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 8%; }
+    body .auth-container .auth-form {
+      text-align: center; }
+      body .auth-container .auth-form h2 {
+        margin-top: 5px; }
+      body .auth-container .auth-form img {
+        margin-top: 20px; }
+      body .auth-container .auth-form form {
+        flex-direction: column; }
+        body .auth-container .auth-form form div {
+          margin-bottom: 10px; }
+        body .auth-container .auth-form form input {
+          border-radius: 15px;
+          padding: 10px;
+          font-size: 15px;
+          min-width: 250px; }
+        body .auth-container .auth-form form button {
+          background-color: white;
+          padding: 20px !important; }
+        body .auth-container .auth-form form .btn {
+          text-decoration: none; }
+        body .auth-container .auth-form form .btn-primary {
+          width: 250px;
+          height: 30px;
+          font-size: 16px;
+          border: 1px solid #3535d1;
+          border-radius: 15px;
+          color: black;
+          cursor: pointer;
+          padding: 5px; }
+        body .auth-container .auth-form form .btn-primary:hover {
+          background-color: #3535d1;
+          color: white; }

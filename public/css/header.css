@@ -1,0 +1,25 @@
+header {
+  background-color: #242424;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+  font-family: sans-serif; }
+  header a {
+    text-decoration: none;
+    color: white; }
+  header ul {
+    width: 14%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none; }
+    header ul a {
+      text-decoration: none;
+      color: white;
+      border: 1px solid white;
+      border-radius: 10px;
+      padding: 10px 15px; }
+    header ul a:hover {
+      background-color: #397c39;
+      border: 1px solid #397c39; }

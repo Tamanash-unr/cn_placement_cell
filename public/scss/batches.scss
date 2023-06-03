@@ -1,0 +1,75 @@
+#main-body{
+    min-height: 60vh;
+
+    .batch-form{
+        margin-top: 50px;
+        margin-bottom: 25px;
+    
+        .form-group{
+            margin-left: 25px;
+    
+            input{
+                border-radius: 15px;
+                padding: 5px;
+            }
+    
+            button{
+                border-radius: 15px;
+                font-size: 15px;
+                padding: 10px;
+                background-color: white;
+                border: 1px solid green;
+            }
+    
+            button:hover{
+                background-color: green;
+                color: white;
+                cursor: pointer;
+            }
+        }   
+    }
+    
+    #batch-list{
+        width:fit-content;
+    
+        li{
+            display: flex;
+            border:1px solid black;
+    
+            div{
+                width: 250px;
+                height: 80px;
+            }
+
+            .batch-delete{
+                a{
+                    border: 1px solid rgb(197, 41, 41);
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    color: rgb(197, 41, 41);
+                }
+
+                a:hover{
+                    background-color: rgb(197, 41, 41);
+                    color: white;
+                }
+            }
+        }
+    
+        #batch-list-item:hover{
+            background-color: rgb(94, 187, 122);
+            color: white;
+        }
+    
+        :first-child{
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+    
+        :last-child{
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+    }
+}
+

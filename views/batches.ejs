@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="/css/batches.css">
+
+<h2 class="flex-center">View/Create Batches</h2>
+
+<form class="flex-center batch-form" action="/utils/create-batch" method="POST">
+    <div class="form-group">
+        <label for="batch_name">Batch Name</label>
+        <input type="text" class="form-control" id="batch_name" name="batch_name" placeholder="Batch Name" required>
+    </div>
+    <div class="form-group">
+        <label for="batch_start_date">Batch Start Date</label>
+        <input type="date" class="form-control" id="batch_start_date" name="batch_start_date" required>
+    </div>
+    <div class="form-group">
+        <label for="batch_end_date">Batch End Date</label>
+        <input type="date" class="form-control" id="batch_end_date" name="batch_end_date" required>
+    </div>
+    <div class="form-group">
+        <button type="submit">Create Batch</button>
+    </div>
+</form>
+
+<div class="flex-center" id="batch-list-container">
+    <% const month=["January","February","March","April","May","June","July","August","September","October","November","December"]; %>
+    <ul id="batch-list">
+        <li id="batch-list-heading">
+            <div class="flex-center batch-name">
+                <h3>Batch Name</h3>
+            </div>
+            <div class="flex-center batch-startDate">
+                <h3>Start Date</h3>
+            </div>
+            <div class="flex-center batch-endDate">
+                <h3>End Date</h3>
+            </div>
+            <div>
+                <a href="#"></a>
+            </div>
+        </li>
+        <% for(var batch of batchList){ %>
+            <li id="batch-list-item">
+                <div class="flex-center batch-name">
+                    <%= batch.batchName %>
+                </div>
+                <div class="flex-center batch-startDate">
+                    <%  
+                        let start_date=new Date(batch.startDate); 
+                        let start_m=month[start_date.getMonth()]; 
+                        let start_d=start_date.getDate(); 
+                        let start_y=start_date.getFullYear(); 
+                    %>
+                    <%= `${start_m} ${start_d}, ${start_y}` %>
+                </div>
+                <div class="flex-center batch-endDate">
+                    <%  
+                        let end_date=new Date(batch.endDate); 
+                        let end_m=month[end_date.getMonth()]; 
+                        let end_d=end_date.getDate(); 
+                        let end_y=end_date.getFullYear(); 
+                    %>
+                    <%= `${end_m} ${end_d}, ${end_y}` %>
+                </div>
+                <div class="flex-center batch-delete">
+                    <a href="/utils/delete-batch/<%= batch._id %>">
+                        <i class="fas fa-trash-alt"></i>
+                        Delete
+                    </a>
+                </div>
+            </li>
+        <% } %> 
+    </ul>
+</div>

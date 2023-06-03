@@ -1,0 +1,25 @@
+footer{
+    margin-top: 12%;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    display: flex;
+    padding: 0px 30px;
+    font-family: sans-serif;
+    overflow: hidden;
+
+    #footer-links{
+        ul{
+            list-style: none;
+
+            li{
+                margin-bottom: 10px;
+
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
