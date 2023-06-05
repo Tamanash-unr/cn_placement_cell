@@ -1,6 +1,7 @@
 #main-body {
   min-height: 60vh; }
   #main-body .student-form {
+    background-color: white;
     margin-top: 50px;
     margin-bottom: 25px;
     border: 1px solid black;
@@ -43,13 +44,18 @@
   #main-body #student-list {
     width: fit-content; }
     #main-body #student-list li {
+      background-color: white;
       display: flex;
       border: 1px solid black; }
       #main-body #student-list li .score-list {
         padding: 5px; }
         #main-body #student-list li .score-list li {
+          color: black;
           min-width: 120px;
           padding: 10px; }
+        #main-body #student-list li .score-list li:hover {
+          background-color: #5ebb7a;
+          color: white; }
       #main-body #student-list li div {
         width: 250px;
         min-height: 80px; }

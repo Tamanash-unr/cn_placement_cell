@@ -21,6 +21,7 @@
   #main-body #batch-list {
     width: fit-content; }
     #main-body #batch-list li {
+      background-color: white;
       display: flex;
       border: 1px solid black; }
       #main-body #batch-list li div {

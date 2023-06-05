@@ -1,7 +1,7 @@
 #main-body{
     min-height: 60vh;
 
-    .student-form{
+    .interview-form{
         background-color: white;
         margin-top: 50px;
         margin-bottom: 25px;
@@ -12,6 +12,7 @@
 
         .form-detail{
             display: flex;
+            align-items: center;
 
             .form-group{
                 margin-bottom: 15px;
@@ -21,26 +22,6 @@
                     border-radius: 15px;
                     padding: 5px;
                     margin-left: 5px;
-                }
-
-                select{
-                    background-color: white;
-                    border-radius: 15px;
-                    padding: 5px;
-                    margin-left: 5px;
-                    width: 280px;
-                }
-    
-                /* Hide Arrows in Number field - Chrome, Safari, Edge, Opera */
-                input::-webkit-outer-spin-button,
-                input::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-                }
-    
-                /* Hide Arrows in Number field - Firefox */
-                input[type=number] {
-                -moz-appearance: textfield;
                 }
             }
         }
@@ -60,35 +41,42 @@
         }      
     }
     
-    #student-list{
+    #interview-list{
         width:fit-content;
     
         li{
             background-color: white;
             display: flex;
             border:1px solid black;
-
-            .score-list{
-                padding: 5px;
-
-                li{
-                    color: black;
-                    min-width: 120px;
-                    padding: 10px;
-                }
-
-                li:hover{
-                    background-color: rgb(94, 187, 122);
-                    color: white;
-                }
-            }
     
             div{
                 width: 250px;
                 min-height: 80px;
             }
 
-            .student-delete{
+            .list-blanks{
+                width: 150px;
+            }
+
+            .interview-view{
+                width: 150px;
+
+                a{
+                    border: 1px solid rgb(50, 84, 238);
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    color: rgb(50, 84, 238);
+                }
+
+                a:hover{
+                    background-color: rgb(50, 84, 238);
+                    color: white;
+                }
+            }
+
+            .interview-delete{
+                width: 150px;
+
                 a{
                     border: 1px solid rgb(197, 41, 41);
                     padding: 10px 20px;
@@ -103,7 +91,7 @@
             }
         }
     
-        #student-list-item:hover{
+        #interview-list-item:hover{
             background-color: rgb(94, 187, 122);
             color: white;
         }

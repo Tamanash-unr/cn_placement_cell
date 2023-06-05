@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 
+// Schema for Interview
 const interviewSchema = new mongoose.Schema({
     companyName:{
         type: String,
         required: true
     },
     interviewDate:{
-        type: String,
+        type: Date,
         required: true
     }
 },{

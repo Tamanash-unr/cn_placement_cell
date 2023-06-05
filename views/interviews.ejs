@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/css/interviews.css">
+
+<div class="flex-center">
+    <form class="interview-form" action="/utils/create-interview" method="POST">
+        <h2>Create Interview</h2>
+        <div class="form-detail">
+                <div class="form-group">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Company Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="interview_date">Date</label>
+                    <input type="date" class="form-control" id="interview_date" name="interview_date" placeholder="dd/mm/yy" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Create</button>
+                </div>
+        </div>
+    </form>
+</div>
+
+<div class="flex-center" id="interview-list-container">
+    <% const month=["January","February","March","April","May","June","July","August","September","October","November","December"]; %>
+    <ul id="interview-list">
+        <li id="interview-list-heading">
+            <div class="flex-center">
+                <h3>Company Name</h3>
+            </div>
+            <div class="flex-center">
+                <h3>Interview Date</h3>
+            </div>
+            <div class="list-blanks">
+                <a href="#"></a>
+            </div>
+            <div class="list-blanks">
+                <a href="#"></a>
+            </div>
+        </li>
+        <% for(var interview of interviewList){ %>
+            <li id="interview-list-item">
+                <div class="flex-center">
+                    <%= interview.companyName %>
+                </div>
+                <div class="flex-center">
+                    <%  
+                        let interview_date=new Date(interview.interviewDate); 
+                        let interview_m=month[interview_date.getMonth()]; 
+                        let interview_d=interview_date.getDate(); 
+                        let interview_y=interview_date.getFullYear(); 
+                    %>
+                    <%= `${interview_m} ${interview_d}, ${interview_y}` %>
+                </div>
+                <div class="flex-center interview-view">
+                    <a href="/utils/interview-detail/<%= interview._id %>">
+                        <i class="fa fa-calendar-alt"></i>
+                        View
+                    </a>
+                </div>
+                <div class="flex-center interview-delete">
+                    <a href="/utils/delete-interview/<%= interview._id %>">
+                        <i class="fas fa-trash-alt"></i>
+                        Delete
+                    </a>
+                </div>
+            </li>
+        <% } %> 
+    </ul>
+</div>

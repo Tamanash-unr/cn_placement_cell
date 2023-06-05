@@ -22,6 +22,7 @@ const flash = require('connect-flash');
 // Setup for Custom Middleware
 const customMware = require('./config/middleware');
 
+// Setup for SCSS files parse to CSS
 app.use(sassMiddleware({
     src: path.join(__dirname, env.asset_path, 'scss'),
     dest: path.join(__dirname, env.asset_path, 'css'),
@@ -50,6 +51,7 @@ app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// Setup for Session
 app.use(session({
     name: "codeial",
     // TODO - Change Secret key before Deployment in Production Mode
@@ -72,10 +74,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(passport.setAuthenticatedUser)
+app.use(passport.setAuthenticatedUser);
 
+// Setup for Flash Notification Messages
 app.use(flash());
-app.use(customMware.setFlash)
+app.use(customMware.setFlash);
 
 // Use Express Router
 app.use('/', require('./routes'))

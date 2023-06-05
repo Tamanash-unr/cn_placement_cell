@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const CryptoJS = require('crypto-js');
 
+// Display Sign In Page
 module.exports.signIn = function(req, res){
     if(req.isAuthenticated()){
         req.flash('warning', "Already Logged In!");
@@ -12,6 +13,7 @@ module.exports.signIn = function(req, res){
     })
 }
 
+// Display Sign Up Page
 module.exports.signUp = function(req, res){
     if(req.isAuthenticated()){
         req.flash('warning', "Already Logged In!");
@@ -22,6 +24,7 @@ module.exports.signUp = function(req, res){
     })
 }
 
+// Creates New User in DB if the user doesn't already exists
 module.exports.createUser = function(req, res){
     if(req.body.password != req.body.confirmPassword){
         console.log(req.body)
@@ -65,6 +68,7 @@ module.exports.createUser = function(req, res){
     })
 }
 
+// On User Session Create Success
 module.exports.createUserSession = function(req, res){
     req.flash('success', 'Logged in Successfully!');
 

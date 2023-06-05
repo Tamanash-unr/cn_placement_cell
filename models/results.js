@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema for Result
 const resultSchema = new mongoose.Schema({
     student:{
         type:  mongoose.Schema.Types.ObjectId,

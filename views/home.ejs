@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/home.css">
 
 <h1>
-    Home
+    Dashboard
 </h1>
 
 <div id="dashboard-utils">
@@ -28,10 +28,14 @@
     </div>
 </div>
 
+<% if(locals.user){ %>
 <div class="download-all">
-    <a href="/utils/download_all">
+    <a id="download-btn" href="/download_all">
         <i class="fas fa-file-csv"></i>
         &nbsp;
         Download All Data
     </a>
 </div>
+<% } %>
+
+<script src="/js/downloads.js"></script>

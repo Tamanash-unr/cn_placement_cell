@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="/css/interviewDetail.css">
+
+<% const month=["January","February","March","April","May","June","July","August","September","October","November","December"]; %>
+
+<div class="interview-detail">
+    <h2>Overview</h2>
+    <h3>Company : <%= interview.companyName %></h3>
+    <%  
+        let interview_date=new Date(interview.interviewDate); 
+        let interview_m=month[interview_date.getMonth()]; 
+        let interview_d=interview_date.getDate(); 
+        let interview_y=interview_date.getFullYear(); 
+    %>
+    <h3>Interview Date : <%= `${interview_m} ${interview_d}, ${interview_y}` %></h3>
+</div>
+
+<div class="flex-center">
+    <form action="/utils/interview/allot-student" method="POST">
+        <h2>Allot Student to Interview</h2>
+        <div class="form-detail">
+            <div class="form-group">
+                <label for="student_id">Student ID</label>
+                <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Student ID" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Allot Student</button>
+            </div>
+            <input type="hidden" name="interview_id" value="<%= interview._id %>">
+        </div>
+    </form>
+    
+    <form action="/utils/interview/update-student-result" method="POST">
+        <h2>Update Student Result</h2>
+        <div class="form-detail">
+            <div class="form-group">
+                <label for="student_id">Student ID</label>
+                <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Student ID" required>
+            </div>
+            <div class="form-group">
+                <label for="student_result">Result</label>
+                <select class="form-group" name="student_result" id="student_result">
+                    <option value="Didn't Attempt">Didn't Attempt</option>
+                    <option value="On Hold">On Hold</option>
+                    <option value="Fail">Fail</option>
+                    <option value="Pass">Pass</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Update Result</button>
+            </div>
+            <input type="hidden" name="interview_id" value="<%= interview._id %>">
+        </div>
+    </form>
+</div>
+
+<div class="flex-center" id="interview-list-container">
+    <ul id="interview-list">
+        <li id="interview-list-heading">
+            <div class="flex-center">
+                <h3>Student ID</h3>
+            </div>
+            <div class="flex-center">
+                <h3>Student Name</h3>
+            </div>
+            <div class="flex-center">
+                <h3>College</h3>
+            </div>
+            <div class="flex-center">
+                <h3>Status</h3>
+            </div>
+            <div class="flex-center">
+                <h3>Result</h3>
+            </div>
+            <div class="list-blanks">
+                <a href="#"></a>
+            </div>
+        </li>
+        <% for(var st of data){ %>
+            <li id="interview-list-item">
+                <div class="flex-center">
+                    <%= st.student._id %>
+                </div>
+                <div class="flex-center">
+                    <%= st.student.name %>
+                </div>
+                <div class="flex-center">
+                    <%= st.student.college %>
+                </div>
+                <div class="flex-center">
+                    <%= st.student.status %>
+                </div>
+                <div class="flex-center">
+                    <%= st.interviewResult %>
+                </div>
+                <div class="flex-center interview-delete">
+                    <a href="/utils/delete-result/<%= st._id %>">
+                        <i class="fas fa-trash-alt"></i>
+                        Delete
+                    </a>
+                </div>
+            </li>
+        <% } %> 
+    </ul>
+</div>
